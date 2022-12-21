@@ -23,7 +23,7 @@ public class LoginActivity extends AppCompatActivity {
         setContentView(R.layout.activity_login);
 
         db = new DatabaseHelper(this);
-        exit = (Button)findViewById(R.id.keluar);
+        exit = (Button) findViewById(R.id.keluar);
         btn_bersih = (Button) findViewById(R.id.bersihkan);
         emaill = (EditText) findViewById(R.id.email);
         passwordd = (EditText) findViewById(R.id.password);
@@ -75,13 +75,8 @@ public class LoginActivity extends AppCompatActivity {
         exit.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
-                Boolean updtSession = db.upgradeSession("kosong", 1);
-                if(updtSession == true) {
-                    Toast.makeText(getApplicationContext(), "Berhasil Logout", Toast.LENGTH_SHORT).show();
-                    Intent loginIntent = new Intent(LoginActivity.this, LoginActivity.class);
-                    startActivity(loginIntent);
-                    finish();
-                }
+                finish();
+                System.exit(0);
             }
         });
     }

@@ -19,7 +19,7 @@ public class MainActivity extends AppCompatActivity {
         db = new DatabaseHelper(this);
 
 
-        Boolean checkSession = db.checkSession("kosong");
+        Boolean checkSession = db.checkSession("ada");
         if(checkSession == false) {
             Intent loginIntent = new Intent(MainActivity.this, LoginActivity.class);
             startActivity(loginIntent);
